@@ -3,9 +3,9 @@ using namespace std;
 
 void exchange(int& a, int& b)
 {
-	a ^= b;
-	b ^= a;
-	a ^= b;
+	int buffer = a;
+	a = b;
+	b = buffer;
 }
 
 void main()
