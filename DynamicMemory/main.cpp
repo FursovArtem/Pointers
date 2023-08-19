@@ -1,6 +1,9 @@
 ﻿#include <iostream>
 using namespace std;
 
+//#define DYNAMIC_MEMORY_1
+#define DYNAMIC_MEMORY_2
+
 void print(int*& arr, int n)
 {
 	for (int i = 0; i < n; i++)
@@ -96,6 +99,7 @@ void erase(int*& arr, int& n, int position)
 void main()
 {
 	setlocale(LC_ALL, "");
+#ifdef DYNAMIC_MEMORY_1
 	int n;
 	cout << "Введите размер массива: "; cin >> n;
 	int* arr = new int[n];
@@ -132,4 +136,9 @@ void main()
 	erase(arr, n, position);
 	print(arr, n);
 	delete[] arr;
+#endif
+
+#ifdef DYNAMIC_MEMORY_2
+
+#endif
 }
